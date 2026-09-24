@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NOIRÉ — Indian Soul. Global Chaos.</title>
+<meta name="description" content="NOIRÉ — a restaurant that collides Indian soul with global chaos. Off menu. On purpose." />
+<meta name="theme-color" content="#0B0B0F" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- Custom cursor (desktop only, see CSS/JS) -->
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+<header class="site-header" id="site-header">
+  <div class="nav-inner container">
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#story">Story</a>
+      <a href="#off-menu">Off Menu</a>
+      <a href="#footer">Find Us</a>
+    </nav>
+
+    <a href="#hero" class="logo">NOIRÉ</a>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="cart-toggle" aria-haspopup="dialog" aria-controls="cart-drawer" aria-expanded="false" aria-label="Open cart, 0 items">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 8h12l-1.2 11a1.5 1.5 0 0 1-1.5 1.35H8.7A1.5 1.5 0 0 1 7.2 19L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
+      <button class="btn btn-primary btn-sm" id="book-table-nav">Book a Table</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <nav aria-label="Mobile">
+      <a href="#menu">Menu</a>
+      <a href="#story">Story</a>
+      <a href="#off-menu">Off Menu</a>
+      <a href="#footer">Find Us</a>
+    </nav>
+    <button class="btn btn-primary" id="book-table-mobile">Book a Table</button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <!-- Invisible layout placeholder: reserves the space the wordmark
+         occupies before JS switches it to fixed positioning for the
+         scroll-driven dock-to-navbar animation. -->
+    <p class="hero-wordmark-spacer" aria-hidden="true">NOIRÉ</p>
+
+    <h1 class="hero-wordmark" id="hero-wordmark" data-reveal-pop>NOIRÉ</h1>
+    <p class="hero-tagline" data-reveal-pop>Off Menu. On Purpose.</p>
+
+    <div class="container hero-inner">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Chennai · After Dark</p>
+        <p class="hero-title">Not your average plate.</p>
+        <p class="hero-sub">Indian soul. Global chaos.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">Explore the Menu</a>
+          <button class="btn btn-ghost" id="book-table-hero">Book a Table</button>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="dish-media dish-media--hero" style="--tint: var(--lime);">
+          <img src="images/hero-signature.jpg?v=2" alt="Close-up of a NOIRÉ signature dish with glossy sauce and visible steam" loading="eager" onload="this.classList.add('is-loaded')" onerror="this.closest('.dish-media').classList.add('img-missing')">
+          <span class="dish-monogram" aria-hidden="true">N</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
+      Scroll
+    </div>
+  </section>
+
+  <!-- FEATURED DISH -->
+  <section class="featured" id="featured">
+    <div class="container featured-inner">
+      <div class="featured-media" data-reveal-pop>
+        <div class="dish-media dish-media--large" style="--tint: var(--lime);">
+          <img src="images/butter-chicken-lasagna.jpg?v=2" alt="Butter Chicken Lasagna, layered and molten with melted mozzarella" loading="lazy" onload="this.classList.add('is-loaded')" onerror="this.closest('.dish-media').classList.add('img-missing')">
+          <span class="dish-monogram" aria-hidden="true">B</span>
+        </div>
+        <span class="badge">NOIRÉ Signature</span>
+      </div>
+
+      <div class="featured-copy" data-reveal>
+        <p class="eyebrow">The Main Character</p>
+        <h2>Butter Chicken<br>Lasagna</h2>
+        <p class="featured-desc">The bite that collapses the second your fork lands — molten layers, smoky heat, and a finish that lingers. This is the one people order NOIRÉ for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">The Menu</p>
+        <h2>Good food. Questionable decisions.</h2>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Menu categories" data-reveal>
+        <button class="filter-btn is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="small-chaos">Small Chaos</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="handheld">Handheld</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="main-character">Main Character</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="sweet-tooth">Sweet Tooth</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="liquid-courage">Liquid Courage</button>
+      </div>
+
+      <p class="category-description" id="category-description" aria-live="polite"></p>
+
+      <ul class="menu-grid" id="menu-grid" aria-live="polite" data-reveal></ul>
+    </div>
+  </section>
+
+  <!-- OFF MENU -->
+  <section class="off-menu" id="off-menu">
+    <div class="container off-menu-inner" data-reveal>
+      <div class="off-menu-copy">
+        <p class="eyebrow">Off Menu</p>
+        <h2>You weren't<br>supposed to<br>find this.</h2>
+        <p>A dish that never made the menu. It exists for exactly the kind of person who reads footnotes.</p>
+        <button class="btn btn-ghost" id="reveal-off-menu" aria-expanded="false" aria-controls="off-menu-card">Reveal It</button>
+      </div>
+
+      <div class="off-menu-card" id="off-menu-card" data-revealed="false">
+        <div class="off-menu-locked">
+          <span class="lock-glyph" aria-hidden="true">＋</span>
+          <p class="locked-label">Classified</p>
+        </div>
+        <div class="off-menu-content">
+          <div class="dish-media dish-media--large" style="--tint: var(--lavender);">
+            <img src="images/chilli-crisp-carbonara.jpg?v=2" alt="Chilli Crisp Carbonara, glossy and laced with chilli oil" loading="lazy" onload="this.classList.add('is-loaded')" onerror="this.closest('.dish-media').classList.add('img-missing')">
+            <span class="dish-monogram" aria-hidden="true">C</span>
+          </div>
+          <div class="off-menu-details">
+            <span class="category-label">Off Menu</span>
+            <h3>Chilli Crisp Carbonara</h3>
+            <p>Italian comfort meets Indian heat.</p>
+            <p class="price">₹449</p>
+            <div class="cart-control" data-id="chilli-crisp-carbonara" data-name="Chilli Crisp Carbonara">
+              <button class="add-btn" type="button" aria-label="Add Chilli Crisp Carbonara to cart">
+                <span class="add-btn-label">Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="container story-inner">
+      <div class="story-media" data-reveal>
+        <div class="dish-media dish-media--story" style="--tint: var(--peach);">
+          <img src="images/story-brand.jpg?v=2" alt="Editorial close-up of a NOIRÉ plate on a dark charcoal background" loading="lazy" onload="this.classList.add('is-loaded')" onerror="this.closest('.dish-media').classList.add('img-missing')">
+          <span class="dish-monogram" aria-hidden="true">N</span>
+        </div>
+      </div>
+      <div class="story-copy" data-reveal>
+        <p class="eyebrow">Our Story</p>
+        <h2>No rules.<br>Just flavour.</h2>
+        <p>We took the flavours we grew up on and let them loose in a kitchen with no borders. Butter chicken meets miso. Tandoor meets tacos. Nothing here asks permission.</p>
+        <p>NOIRÉ isn't fusion for the sake of it — it's what happens when Chennai stops explaining itself.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="reserve">
+    <div class="cta-bg" aria-hidden="true"></div>
+    <div class="container cta-inner" data-reveal>
+      <p class="eyebrow">Reserve a Seat</p>
+      <h2>Come hungry.<br>Leave with stories.</h2>
+      <div class="cta-actions">
+        <button class="btn btn-primary" id="book-table-cta">Book a Table</button>
+        <a href="#menu" class="btn btn-ghost">Explore the Menu</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="container footer-brand-row">
+    <p class="logo">NOIRÉ</p>
+    <p class="footer-tagline">Indian soul. Global chaos.</p>
+  </div>
+
+  <div class="container footer-inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#menu">Menu</a>
+      <a href="#story">Story</a>
+      <a href="#off-menu">Off Menu</a>
+      <a href="#footer">Find Us</a>
+    </nav>
+
+    <div class="footer-social">
+      <p class="footer-heading">Follow</p>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
+    </div>
+
+    <div class="footer-location">
+      <p class="footer-heading">Find Us</p>
+      <p>Chennai, India</p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 NOIRÉ. All rights reserved.</p>
+    <p class="footer-note">Off menu. On purpose.</p>
+  </div>
+</footer>
+
+<!-- RESERVATION MODAL -->
+<div class="overlay" id="modal-overlay" hidden></div>
+<div class="modal" id="reservation-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <button class="modal-close" id="modal-close" aria-label="Close dialog">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="modal-body" id="modal-body">
+    <p class="eyebrow">Reservations</p>
+    <h3 id="modal-title">Book a Table</h3>
+
+    <form id="reservation-form" novalidate>
+      <label class="field">
+        <span>Name</span>
+        <input type="text" name="name" required autocomplete="name" />
+      </label>
+      <div class="field-row">
+        <label class="field">
+          <span>Date</span>
+          <input type="date" name="date" required />
+        </label>
+        <label class="field">
+          <span>Time</span>
+          <input type="time" name="time" required />
+        </label>
+      </div>
+      <label class="field">
+        <span>Guests</span>
+        <input type="number" name="guests" min="1" max="12" value="2" required />
+      </label>
+      <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+      <p class="modal-fineprint">Demo only — no reservation is actually sent.</p>
+    </form>
+
+    <div class="modal-success" id="modal-success" hidden>
+      <span class="success-check" aria-hidden="true">✓</span>
+      <p>Reservation requested.</p>
+      <p class="modal-fineprint">We've noted it down. See you at NOIRÉ.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="drawer-overlay" hidden></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+  <div class="cart-header">
+    <h3 id="cart-title">Your Cart</h3>
+    <button class="modal-close" id="cart-close" aria-label="Close cart">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <p class="cart-empty" id="cart-empty">Your cart is quiet. For now.</p>
+  <ul class="cart-list" id="cart-list"></ul>
+
+  <div class="cart-footer" id="cart-footer" hidden>
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cart-subtotal">₹0</span>
+    </div>
+    <button class="btn btn-primary" id="cart-book-btn">Book a Table</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
